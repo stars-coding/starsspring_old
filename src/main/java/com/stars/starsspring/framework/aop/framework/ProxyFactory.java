@@ -55,7 +55,7 @@ public class ProxyFactory {
     private AopProxy createAopProxy() {
         // 根据配置选择使用CGLIB还是JDK动态代理
         if (this.advisedSupport.isProxyTargetClass()) {
-            return new Cglib2AopProxy(this.advisedSupport);
+            return new CglibAopProxy(this.advisedSupport);
         }
         return new JdkDynamicAopProxy(this.advisedSupport);
     }
